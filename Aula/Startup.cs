@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.EntityFrameworkCore;
+using Aula.Data;
 
 namespace Aula
 {
@@ -33,6 +35,12 @@ namespace Aula
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddDbContext<AulaContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("AulaContext")));
+
+            services.AddDbContext<AulaContext>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("AulaContext")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

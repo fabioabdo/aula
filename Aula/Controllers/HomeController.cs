@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using Aula.Models;
+using Aula.Models.ViewModels;
 
 namespace Aula.Controllers
 {
